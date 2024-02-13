@@ -1,0 +1,129 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --index: calc(1vw + 1vh);
+  --gutter: 30px;
+  --side-small: 26;
+  --side-bigger: 36;
+  --depth: 4000px;
+  --transition: 0.7s cubic-bezier(.075, 0.5, 0, 1);
+}
+
+@font-face {
+  font-family: raleway_c;
+  src: url(../fonts/raleway-v22-cyrillic-300.woff2);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: raleway_c;
+  src: url(../fonts/raleway-v22-cyrillic-100.woff2);
+  font-weight: 100;
+}
+
+body {
+  background: black;
+  color: #fff;
+  font-size: calc(var(--index) * .8);
+  font-family: raleway_c, sans-serif;
+  line-height: 1.75;
+  height: var(--depth);
+  font-weight: 300;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  perspective: 1500px;
+}
+
+.gallery {
+  transform-style: preserve-3d;
+  height: 100%;
+}
+
+.frame {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition), opacity 0.7s ease;
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+
+.frame h1 {
+  text-align: center;
+  font-size: calc(var(--index)*2);
+}
+
+.frame-media__wide {
+  position: relative;
+  width: calc(var(--index)* var(--side-bigger));
+  height: calc(var(--index)* var(--side-small));
+  background-position: center;
+  background-size: cover;
+}
+
+.frame-media {
+  position: relative;
+  width: calc(var(--index)* var(--side-small));
+  height: calc(var(--index)* var(--side-bigger));
+  background-position: center;
+  background-size: cover;
+
+}
+
+.frame-media__left {
+  right: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+}
+
+.frame-media__right {
+  left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+}
+
+.text__left>* {
+  position: relative;
+  text-align: left;
+  right: 21vw;
+}
+
+.text__right>* {
+  position: relative;
+  text-align: left;
+  left: 21vw;
+}
+
+.frame h2 {
+  font-size: calc(var(--index)*2);
+  transform-style: preserve-3d;
+
+}
+
+.frame p {
+  font-size: calc(var(--index)*1);
+  transform-style: preserve-3d;
+  max-width: 30vw;
+  margin-top: 5vh;
+  font-weight: 100;
+}
+
+.frame_bg {
+  background-color: rgba(0, 0, 0, 0.5);
+}
