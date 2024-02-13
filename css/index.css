@@ -98,17 +98,18 @@ h4 {
   left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
 }
 
-.text__left>* {
+.text__left .frame-content {
   position: relative;
   text-align: left;
   right: 21vw;
 }
 
-.text__right>* {
+.text__right .frame-content {
   position: relative;
   text-align: left;
   left: 21vw;
 }
+
 
 .frame h2 {
   font-size: calc(var(--index)*2);
@@ -126,4 +127,26 @@ h4 {
 
 .frame_bg {
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+@media (max-width: 700px) {
+  .text__left .frame-content {
+    right: 21vw;
+  }
+
+  .text__right .frame-content {
+    left: 21vw;
+  }
+
+  .frame h2 {
+    font-size: calc(var(--index)*2);
+    transform-style: preserve-3d;
+    width: min-content;
+  }
+
+  .frame p {
+    max-width: 40vw;
+    max-width: 30vw;
+  }
 }
