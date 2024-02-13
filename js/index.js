@@ -11,7 +11,7 @@ window.onscroll = function () {
   let delta = lastPos - top;
 
   lastPos = top;
-
+  zVals = zVals.slice(0, frames.length);
   frames.forEach(function (nawElement, i) {
     zVals.push((i * Zspacing) + Zspacing);
     zVals[i] += delta * -5;
